@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.gap-5 {
+    gap: 5px;
+}
+.gap-10 {
+    gap: 10px;
+}
+.gap-15 {
+    gap: 15px;
+}
+
+:root {
+    --color-e9edd7: #e9edd7;
+    --color-075159: #075159;
+    --color-ef8700: #ef8700;
+}
+
+.bg-orange {
+    background-color: #ef8700!important;
+}
+/* Header */
+.header-top{
+    background-color: var(--color-e9edd7);
+}
+.header-top a {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 12px;
+}
+.header-top i {
+    color: #48a6ae;
+    font-size: 16px;
+}
+.header-main div i {
+    display: block;
+    border-radius: 10px;
+}
+.header-main div input:focus {
+    box-shadow: none;
+    border-color: inherit;
+}
+.header-main-content p {
+    font-size: 13px;
+    font-weight: 400;
+}
+p.header-main-content-bold {
+    color: var(--color-075159);
+    font-size: 16px;
+    font-weight: 600;
+}
+.header-nav {
+    background-color: var(--color-075159);
+}
+.header-nav .navbar-nav a:hover {
+    background-color: var(--color-ef8700);
+}
+/* End Header */
+
+/* Footer */
+
+footer {
+    background-color: #000e11;
+}
+.newsletter {
+    background-color: #48a6ae;
+}
+.newsletter input {
+    max-width: 600px;
+    background-color: #a4d2d6;
+    padding: 15px;
+    font-size: 14px;
+}
+.newsletter input:focus {
+    box-shadow: none;
+    border-color: inherit;
+    background-color: #a4d2d6;
+
+}
+.newsletter .input-group span {
+    background-color: var(--color-075159);
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.newsletter .input-group span:hover {
+    opacity: .8;
+}
+.footer-title {
+    color: #fba402;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.footer-items {
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer-items li{
+    color: #fff;
+    font-size: 14px;
+}
+.footer-items li i {
+    font-size: 26px;
+
+}
+
+/* End Footer */
+
+/* Home Categories */
+
+.container-title {
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.container-title span:before {
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: var(--color-075159);
+    position: absolute;
+    top: 18px;
+    left: -80px;
+}
+.container-title span:after {
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: var(--color-075159);
+    position: absolute;
+    top: 18px;
+    right: -80px;
+}
+.home-categories span{
+    width: 100%;
+    top: 50%;
+    left: 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    display: inline;
+    text-align: center;
+}
+.home-categories div {
+    overflow: hidden;
+}
+.home-categories a img {
+    transition: all 1s;
+}
+.home-categories a:hover img{
+    transform: scale(1.2);
+}
+.home-categories a span {
+}
+.home-categories a:hover span {
+    display: none;
+}
+.home-categories a:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid #fff;
+    opacity: .5;
+    z-index: 1;
+}
+/* End Home Categories */
+
+/* Home Best Seller */
+.home-bestseller a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 300px;
+}
+.home-bestseller a:hover{
+    box-shadow: 0 1px 5px rgb(189, 189, 189);
+    opacity: .8;
+}
+
+.home-bestseller-product-content h5{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+.home-bestseller-product-content p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+
+}
+
+/* End Home Best Seller */
+
+/* Popular Collection */
+.home-collection a{
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.home-collection a:hover .home-collection-title {
+    bottom: 0;
+}
+.home-collection-img{
+    overflow: hidden;
+    position: relative;
+}
+.home-collection-img img {
+    transition: all .5s;
+}
+.home-collection-img img:hover {
+    transform: scale(1.1);
+}
+.home-collection-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding-left: 10px;
+    position: absolute;
+    bottom: -56px;
+    left: 0;
+    width: 100%;
+    transition: all .5s;
+    text-transform: uppercase;
+}
+.home-collection-title h5{
+    font-size: 14px;
+    font-weight: 700;
+}
+.home-collection-title p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+
+/* End Popular Collection */
+
+
+
