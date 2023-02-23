@@ -1,0 +1,212 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="w-100 mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="p-1">
+                        <div class="sidebar_widget border mb-3">
+                            <div class="widget-title">CATEGORIES</div>
+                            <div class="widget-content">
+                                <ul class="p-0">
+                                    <li class="p-1">
+                                        <a href="#">Laptops & Computers</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Cameras</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Home Entertainment</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Home Appliances</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Health & Beauty</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">About Us</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Blog</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+
+                                    <li class="p-1">
+                                        <a href="#">Lookbook</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sidebar_widget border mb-3">
+                            <div class="widget-title">FILTER BY PRICE</div>
+                            <div class="widget-content">
+                                <ul class="p-0">
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Under $100</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>$100 - $300</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>$300 - $500</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>$500 - $1000</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>$1000 - $1500</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sidebar_widget border mb-3">
+                            <div class="widget-title">FILTER BY COLOR</div>
+                            <div class="widget-content">
+                                <ul class="p-0 d-flex">
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: black;"></a></li>
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: red;"></a></li>
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: blue;"></a></li>
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: pink;"></a></li>
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: white;"></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sidebar_widget border mb-3">
+                            <div class="widget-title">FILTER BY TYPE</div>
+                            <div class="widget-content">
+                                <ul class="p-0">
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>SLR</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Digital</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Video Camera</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Lens</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sidebar_widget border mb-3">
+                            <div class="widget-title">FILTER BY BRANDS</div>
+                            <div class="widget-content">
+                                <ul class="p-0">
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Canon</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Acer</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Nikon</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Philips</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Samsung</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Fujifilm</span>
+                                    </li>
+                                    <li class="p-1">
+                                        <input type="checkbox"/>
+                                        <span>Sony</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <header class="product-header">
+                        <h1 class="product-title">CAMERAS</h1>
+                        <div class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rerum aperiam corporis minima quod. Hic, voluptas? Laudantium sed ex blanditiis ipsam necessitatibus molestiae illo deleniti, dolor voluptatibus tempore molestias aliquid.</div>
+                    </header>
+                    <div class="productList row">
+
+                        <div class="card col-3 border-0">
+                            <img class="card-img-top" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="product-title">Alpha ILCE-6000L 24.3 MP Mirrorless</h5>
+                                <p class="product-price ">$400.00</p>
+                            </div>
+                        </div>
+
+                        <div class="card col-3 border-0">
+                            <img class="card-img-top" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="product-title">Alpha ILCE-6000L 24.3 MP Mirrorless</h5>
+                                <p class="product-price ">$400.00</p>
+                            </div>
+                        </div>
+
+                        <div class="card col-3 border-0">
+                            <img class="card-img-top" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="product-title">Alpha ILCE-6000L 24.3 MP Mirrorless</h5>
+                                <p class="product-price ">$400.00</p>
+                            </div>
+                        </div>
+
+                        <div class="card col-3 border-0">
+                            <img class="card-img-top" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="product-title">Alpha ILCE-6000L 24.3 MP Mirrorless</h5>
+                                <p class="product-price ">$400.00</p>
+                            </div>
+                        </div>
+
+                        <div class="card col-3 border-0">
+                            <img class="card-img-top" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="product-title">Alpha ILCE-6000L 24.3 MP Mirrorless</h5>
+                                <p class="product-price ">$400.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
