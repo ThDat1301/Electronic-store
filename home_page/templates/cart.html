@@ -1,0 +1,95 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="bill-container">
+        <h2>YOUR CARD</h2>
+        <div class="bill">
+            <div class="bill-head">
+                <ul class="head-list">
+                    <li class="bill-item item-name">PRODUCT</li>
+                    <li class="bill-item item-price">PRICE</li>
+                    <li class="bill-item item-quantity">QUANTITY</li>
+                    <li class="bill-item item-total">TOTAL</li>
+                </ul>
+            </div>
+            <div class="bill-body">
+                <ul class="bill-detail">
+                    <li class="bill-item item-name">
+                        <img src="https://cdn.shopify.com/s/files/1/1545/7777/products/coolpix-black_100x.jpg?v=1516209979" alt="item picture" class="item-img">
+                        <p class="item-fullname">Coupon Inside Acer DLP 3D Projector</p>
+                    </li>
+                    <li class="bill-item item-price">$329.00</li>
+                    <li class="bill-item item-quantity">
+                        <div class="wrapper">
+                            <span class="minus">-</span>
+                            <span class="num">01</span>
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="button btn-delete"><i class="fa-solid fa-xmark"></i></i> REMOVE</div>
+                    </li>
+                    <li class="bill-item item-total">$329.00</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="information">
+            <div class="note">
+                <div class="info-header">ADD A NOTE TO YOUR ORDER</div>
+                <form>
+                    <textarea class="notebox"></textarea>
+                </form>
+            </div>
+            <div class="address">
+                <div class="info-header">GET SHIPPING ESTIMATES</div>
+                <div class="wrapper-form">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="countryname" placeholder="" class="input-form">
+                </div>
+                <div class="wrapper-form">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="" class="input-form">
+                </div>
+                <div class="wrapper-form">
+                    <label for="country">Postal/Zip</label>
+                    <input type="text" id="postal" name="postal-zip" placeholder="" class="input-form">
+                </div>
+                <div class="wrapper-form">
+                    <label for="code">Code</label>
+                    <button class="button">CALCULATE SHIPPING</button>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="info-header">SUBTOTAL $329.00</div>
+                <div class="sub-info-header">Shipping & taxes calculated at checkout</div>
+                <div class="payment-btn">
+                    <button class="button btn-update">UPDATE</button>
+                    <button class="button btn-checkout">CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const plus = document.querySelector(".plus"),
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+
+        let a = 1;
+
+        plus.addEventListener("click", ()=>{
+            a++;
+            a = (a < 10)? "0" + a : a;
+            num.innerHTML = a;
+            console.log(a);
+        });
+
+        minus.addEventListener("click", ()=>{
+            if (a > 1)
+            {
+                a--;
+                a = (a < 10)? "0" + a : a;
+                num.innerHTML = a;
+            }
+        });
+    </script>
+{% endblock %}
