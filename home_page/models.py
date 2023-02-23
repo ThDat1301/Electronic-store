@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class Category(models.Model):
@@ -9,25 +9,20 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     price = models.FloatField(default=0.0)
-    image = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='products/%Y/%m', default=None)
     active = models.BooleanField(default=True)
     category = models.ForeignKey(Category,related_name='category', on_delete=models.DO_NOTHING)
     def __str__(self):
         return self.name
-class User(models.Model):
-    name = models.CharField(max_length=50)
-    phoneNum = models.CharField(max_length=12)
-    address = models.CharField(max_length=100)
-    email = models.CharField(max_length=50)
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+class User(AbstractUser):
+    avatar = models.ImageField(upload_to='uploads/%Y/%m', default=None)
 
     def __str__(self):
         return self.name
 class Comment(models.Model):
-    content = models.TextField()
+    content = models.TextField(blank=True)
     product = models.ForeignKey(Product, related_name='comment', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='comment', on_delete=models.CASCADE)
 class Order(models.Model):
