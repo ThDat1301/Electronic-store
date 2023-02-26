@@ -77,10 +77,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ecommercedb',
         'USER': 'root',
-        'PASSWORD': 'ducprotc@123',
+        'PASSWORD': '01312101220LtfA',
         'HOST': ''
     }
 }
+# Dat: 01312101220LtfA
 
 AUTH_USER_MODEL = 'home_page.User'
 # Password validation
