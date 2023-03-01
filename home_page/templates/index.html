@@ -114,7 +114,7 @@
             <div class="col-2">
                 <a href="/category/{{ c.id }}">
                     <div class="home-collection-img">
-                        <img class="img-fluid" src="static/{{ c.image }}" alt="{{ c.name }}">
+                        <img class="img-fluid" src="{% static '' %}{{ c.image }}" alt="{{ c.name }}">
                     </div>
                     <div class="home-collection-title py-2">
                         <h5 class="mb-0">{{ c.name }}</h5>

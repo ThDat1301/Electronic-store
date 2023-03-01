@@ -27,7 +27,7 @@ def create_product():
                                      price='400',
                                      category=camera_category)
     Product.objects.update_or_create(name='Coolpix (A100) 20 MP Point & Shoot Camera',
-                                     image='products/2023/02/Coolpix_(A100)_20MPPoint&ShootCamera.webp',
+                                     image='products/2023/02/Coolpix_(A100)_20 MP_Point&ShootCamera.webp',
                                      price='370',
                                      category=camera_category)
     Product.objects.update_or_create(name='Alpha ILCE-6000L 24.3 MP Mirrorless',
@@ -63,6 +63,11 @@ def create_product():
                                      image='products/2023/02/pendrive_180x.avif',
                                      price='20',
                                      category=lapcom_category)
+    Product.objects.update_or_create(name='HOT PICK HP ENVY D052TU INTEL CORE I5 (6TH GENERATION) 13.3',
+                                     image='products/2023/02/HOT_PICK_HP_ENVY_D052TU_INTEL_CORE_I5_(6TH_GENERATION).webp',
+                                     price='700',
+                                     category=lapcom_category)
+
     home_entertain_category = Category.objects.get(name='Home Entertainment')
     Product.objects.update_or_create(name='5.1 Channel Blu Ray Dollby Sound',
                                      image='products/2023/02/5.1_Channel_Blu_Ray_Dollby_Sound.avif',
@@ -129,10 +134,9 @@ def create_product():
 
 
 if __name__ == '__main__':
-    # create_category()
-    # create_product()
-    a = Category.countProduct(2)
-    print(a)
+    create_category()
+    create_product()
+
 
 
 

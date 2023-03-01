@@ -13,9 +13,10 @@ def category(request, cate_id):
 
 
 def index(request):
-    categories = Category.objects.all()
-    context = {
-        'categories': categories,
-    }
     template = loader.get_template('index.html')
-    return HttpResponse(template.render(context, request))
+    return render(request, 'index.html')
+
+
+def cart(request):
+    template = loader.get_template('cart.html')
+    return HttpResponse(template.render())

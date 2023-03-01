@@ -11,42 +11,11 @@
                             <div class="widget-title">CATEGORIES</div>
                             <div class="widget-content">
                                 <ul class="p-0">
+                                    {% for c in categories %}
                                     <li class="p-1">
-                                        <a href="#">Laptops & Computers</a>
+                                        <a href="/category/{{ c.id }}">{{ c.name }}</a>
                                     </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Cameras</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Home Entertainment</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Home Appliances</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Health & Beauty</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">About Us</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Blog</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Contact Us</a>
-                                    </li>
-
-                                    <li class="p-1">
-                                        <a href="#">Lookbook</a>
-                                    </li>
-
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -166,7 +135,7 @@
                     <div class="productList d-flex flex-wrap">
                         {% for p in product %}
                         <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="/static/{{ p.image }}" alt={{ p.name }}></a>
+                            <a href="#"><img class="card-img-top product-img p-3" src="{% static ''%}{{ p.image }}" alt={{ p.name }}></a>
                             <div class="btn-set d-flex flex-column">
                                 <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
                                 <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
