@@ -8,11 +8,16 @@ from home_page.models import Category, Product
 
 
 def create_category():
-    Category.objects.update_or_create(name="Laptops & Computers")
-    Category.objects.update_or_create(name="Cameras")
-    Category.objects.update_or_create(name="Home Entertainment")
-    Category.objects.update_or_create(name="Home Appliances")
-    Category.objects.update_or_create(name="Health & Beauty")
+    Category.objects.update_or_create(name="Laptops & Computers",
+                                      image='home_page/images/collection/laptops-computers_300x.avif')
+    Category.objects.update_or_create(name="Cameras",
+                                      image='home_page/images/collection/camera.avif')
+    Category.objects.update_or_create(name="Home Entertainment",
+                                      image='home_page/images/collection/entertainment_300x.avif')
+    Category.objects.update_or_create(name="Home Appliances",
+                                      image='home_page/images/collection/home-appliance_300x.avif')
+    Category.objects.update_or_create(name="Health & Beauty",
+                                      image='home_page/images/collection/health-beauty_300x.avif')
 
 
 def create_product():
@@ -124,8 +129,10 @@ def create_product():
 
 
 if __name__ == '__main__':
-    create_category()
-    create_product()
+    # create_category()
+    # create_product()
+    a = Category.countProduct(2)
+    print(a)
 
 
 

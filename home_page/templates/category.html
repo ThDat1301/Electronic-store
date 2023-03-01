@@ -160,94 +160,95 @@
 
                 <div class="col-8">
                     <header class="product-header mb-3">
-                        <h1>CAMERAS</h1>
+                        <h1>{{ category.name }}</h1>
                         <div class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rerum aperiam corporis minima quod. Hic, voluptas? Laudantium sed ex blanditiis ipsam necessitatibus molestiae illo deleniti, dolor voluptatibus tempore molestias aliquid.</div>
                     </header>
                     <div class="productList d-flex flex-wrap">
-
+                        {% for p in product %}
                         <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
+                            <a href="#"><img class="card-img-top product-img p-3" src="/static/{{ p.image }}" alt={{ p.name }}></a>
                             <div class="btn-set d-flex flex-column">
                                 <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
                                 <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
                                 <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
                             </div>
                             <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
+                                <div class="product-title"><a href="#">{{ p.name }}</a></div>
+                                <div class="product-price">{{ p.price }}$</div>
 
                             </div>
                         </div>
+                        {% endfor %}
 
-                        <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
-                            <div class="btn-set d-flex flex-column">
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
-                            </div>
-                            <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
-
-                            </div>
-                        </div>
-
-                        <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
-                            <div class="btn-set d-flex flex-column">
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
-                            </div>
-                            <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
-
-                            </div>
-                        </div>
-
-                        <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
-                            <div class="btn-set d-flex flex-column">
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
-                            </div>
-                            <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
-
-                            </div>
-                        </div>
-
-                        <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
-                            <div class="btn-set d-flex flex-column">
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
-                            </div>
-                            <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
-
-                            </div>
-                        </div>
-
-                        <div class="product-item bg-white overflow-hidden">
-                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>
-                            <div class="btn-set d-flex flex-column">
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>
-                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>
-                            </div>
-                            <div class="product-detail text-center">
-                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>
-                                <div class="product-price">$400.00</div>
-
-                            </div>
-                        </div>
+{#                        <div class="product-item bg-white overflow-hidden">#}
+{#                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>#}
+{#                            <div class="btn-set d-flex flex-column">#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>#}
+{#                            </div>#}
+{#                            <div class="product-detail text-center">#}
+{#                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>#}
+{#                                <div class="product-price">$400.00</div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="product-item bg-white overflow-hidden">#}
+{#                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>#}
+{#                            <div class="btn-set d-flex flex-column">#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>#}
+{#                            </div>#}
+{#                            <div class="product-detail text-center">#}
+{#                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>#}
+{#                                <div class="product-price">$400.00</div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="product-item bg-white overflow-hidden">#}
+{#                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>#}
+{#                            <div class="btn-set d-flex flex-column">#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>#}
+{#                            </div>#}
+{#                            <div class="product-detail text-center">#}
+{#                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>#}
+{#                                <div class="product-price">$400.00</div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="product-item bg-white overflow-hidden">#}
+{#                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>#}
+{#                            <div class="btn-set d-flex flex-column">#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>#}
+{#                            </div>#}
+{#                            <div class="product-detail text-center">#}
+{#                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>#}
+{#                                <div class="product-price">$400.00</div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="product-item bg-white overflow-hidden">#}
+{#                            <a href="#"><img class="card-img-top product-img p-3" src="//cdn.shopify.com/s/files/1/1545/7777/products/sony-1_200x.jpg?v=1485592265" alt="Card image cap"></a>#}
+{#                            <div class="btn-set d-flex flex-column">#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-regular fa-heart icon-heart"></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-cart-shopping icon-cart-shopping"></i></i></a>#}
+{#                                <a class="icon d-flex mb-1" href="#"><i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i></a>#}
+{#                            </div>#}
+{#                            <div class="product-detail text-center">#}
+{#                                <div class="product-title"><a href="#">Alpha ILCE-6000L 24.3 MP Mirrorless</a></div>#}
+{#                                <div class="product-price">$400.00</div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
 
                     </div>
                 </div>

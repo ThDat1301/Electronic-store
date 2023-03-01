@@ -108,73 +108,66 @@
     </div>
     <div class="container home-collection py-4">
         <h3 class="container-title text-center py-3"><span class="position-relative">Popular Collections</span></h3>
-        <div class="row">
+        <div class="row justify-content-between">
+            {% for c in categories %}
+
             <div class="col-2">
-                <a href="">
+                <a href="/category/{{ c.id }}">
                     <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
+                        <img class="img-fluid" src="static/{{ c.image }}" alt="{{ c.name }}">
                     </div>
                     <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
+                        <h5 class="mb-0">{{ c.name }}</h5>
+                        <p class="mb-0 mt-1">{{ c.countProduct }} Product</p>
                     </div>
                 </a>
             </div>
-            <div class="col-2">
-                <a href="">
-                    <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
-                    </div>
-                    <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-2">
-                <a href="">
-                    <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
-                    </div>
-                    <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-2">
-                <a href="">
-                    <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
-                    </div>
-                    <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-2">
-                <a href="">
-                    <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
-                    </div>
-                    <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-2">
-                <a href="">
-                    <div class="home-collection-img">
-                        <img class="img-fluid" src={% static 'home_page/images/collection/camera.avif' %} alt="Cameras">
-                    </div>
-                    <div class="home-collection-title py-2">
-                        <h5 class="mb-0">Cameras</h5>
-                        <p class="mb-0 mt-1">13 Products</p>
-                    </div>
-                </a>
-            </div>
+
+            {% endfor %}
+{#            <div class="col-2">#}
+{#                <a href="">#}
+{#                    <div class="home-collection-img">#}
+{#                        <img class="img-fluid" src={% static 'home_page/images/collection/laptops-computers_300x.avif' %} alt="Laptops & Computers">#}
+{#                    </div>#}
+{#                    <div class="home-collection-title py-2">#}
+{#                        <h5 class="mb-0">Laptops & Computers</h5>#}
+{#                        <p class="mb-0 mt-1">13 Products</p>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-2">#}
+{#                <a href="">#}
+{#                    <div class="home-collection-img">#}
+{#                        <img class="img-fluid" src={% static 'home_page/images/collection/entertainment_300x.avif' %} alt="Home Entertainment">#}
+{#                    </div>#}
+{#                    <div class="home-collection-title py-2">#}
+{#                        <h5 class="mb-0">Home Entertainment</h5>#}
+{#                        <p class="mb-0 mt-1">13 Products</p>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-2">#}
+{#                <a href="">#}
+{#                    <div class="home-collection-img">#}
+{#                        <img class="img-fluid" src={% static 'home_page/images/collection/home-appliance_300x.avif' %} alt="Home Appliances">#}
+{#                    </div>#}
+{#                    <div class="home-collection-title py-2">#}
+{#                        <h5 class="mb-0">Home Appliances</h5>#}
+{#                        <p class="mb-0 mt-1">13 Products</p>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-2">#}
+{#                <a href="">#}
+{#                    <div class="home-collection-img">#}
+{#                        <img class="img-fluid" src={% static 'home_page/images/collection/health-beauty_300x.avif' %} alt="Health & Beauty">#}
+{#                    </div>#}
+{#                    <div class="home-collection-title py-2">#}
+{#                        <h5 class="mb-0">Health & Beauty</h5>#}
+{#                        <p class="mb-0 mt-1">13 Products</p>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
 
         </div>
     </div>
