@@ -561,3 +561,32 @@ footer {
 }
 /* End Card */
 
+/* Signup */
+
+.title-primary {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-ef8700);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    min-width: 110px;
+    padding: 10px 0 10px 0;
+}
+.btn-primary:hover {
+    opacity: 0.8;
+    background-color: var(--color-ef8700);
+}
+.form-signup label,
+.form-login label{
+    font-size: 14px;
+
+}
+
+/* End Signup */
+

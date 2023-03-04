@@ -39,7 +39,7 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='uploads/%Y/%m', default=None)
 
     def __str__(self):
-        return self.name
+        return self.username
 
 
 class Comment(models.Model):
