@@ -20,3 +20,7 @@ def index(request):
 def cart(request):
     template = loader.get_template('cart.html')
     return HttpResponse(template.render())
+
+def product_detail(request):
+    template = loader.get_template('product_detail.html')
+    return HttpResponse(template.render())
