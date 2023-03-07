@@ -6,7 +6,7 @@
     <main class="main-content" id="MainContent" role="main">
         <div class="breadcrumbWrap">
             <div class="container">
-                    <div class="breadcrumbWrap">
+                <div class="breadcrumbWrap">
                     <div class="page-width">
                         <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
                             <a href="/" title="Back to the home page">Home</a>
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="thumbnails-wrapper">
-                            <div class="grid ">
+                            <div class="grid">
 
                                 <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">
                                     <a href="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_600x.jpg?v=1516260250"
@@ -140,7 +140,6 @@
 
                             </div>
 
-                            <!-- product variants -->
                             <form method="post" action="/cart/add" id="product_form_6452620165" accept-charset="UTF-8"
                                   class="product-form-6452620165 product-form-product-template hidedropdown"
                                   enctype="multipart/form-data" novalidate="novalidate"><input type="hidden"
@@ -165,10 +164,14 @@
                                     <div class="product-form__item--quantity">
                                         <div class="wrapQtyBtn">
                                             <div class="qtyField">
-                                                <a class="qtyBtn minus"><center>-</center></a>
+                                                <a class="qtyBtn minus">
+                                                    <center>-</center>
+                                                </a>
                                                 <input type="text" id="quantity" name="quantity" value="1"
                                                        class="product-form__input qty"/>
-                                                <a class="qtyBtn plus"><center>+</center></a>
+                                                <a class="qtyBtn plus">
+                                                    <center>+</center>
+                                                </a>
 
                                             </div>
                                         </div>
@@ -226,252 +229,79 @@
                                 Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
                         </div>
-
                         <h3 class="acor-ttl medium-up--hide"><a class="tablink" href="#tab2">Product Reviews</a></h3>
                         <div id="tab2" class="tab-content grid-products">
-
                             <div id="shopify-product-reviews" data-id="6452620165">
                                 <div class="spr-container">
                                     <div class="spr-header">
                                         <h2 class="spr-header-title">Customer Reviews</h2>
                                         <div class="spr-summary">
-
         <span class="spr-starrating spr-summary-starrating">
           <i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i
                 class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i
                 class="spr-icon spr-icon-star"></i>
         </span>
-                                            <span class="spr-summary-caption"><span
-                                                    class='spr-summary-actions-togglereviews'>Based on 1 review</span>
+                                            <span class="spr-summary-caption">
+                                                <span class='spr-summary-actions-togglereviews'>Based on 1 review</span>
         </span><span class="spr-summary-actions">
         <a href='#' class='spr-summary-actions-newreview' onclick='SPR.toggleForm(6452620165);return false'>Write a review</a>
       </span>
                                         </div>
                                     </div>
-
                                     <div class="spr-content">
                                         <div class='spr-form' id='form_6452620165'></div>
                                         <div class='spr-reviews' id='reviews_6452620165'></div>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
         <div class="container home-collection py-4">
             <h3 class="container-title text-center py-3"><span class="position-relative">Related Products</span></h3>
             <div class="row justify-content-between">
+                <div class="productList d-flex flex-wrap">
 
-                <div id="productSlider-related-products" class=" grid--view-items slick-initialized slick-slider">
-
-                    <div class="grid__item medium-up--one-half small--one-third large--one-quarter large-up--one-fifth">
-
-                        <div class="grid-view-item wow fadeIn col-2" data-wow-delay="50ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/samsung-ht-j5100k-5-1-channel-blu-ray">
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_200x.png?v=1485678754"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_{width}x.png?v=1485678754"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.0677655677655677"
-                                         data-sizes="auto" alt="5.1 Channel Blu Ray Dollby Sound">
-                                    <span class="product-labels rectangular"></span>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/samsung-ht-j5100k-5-1-channel-blu-ray"
-                                   class="grid-view-item__title">5.1 Channel Blu Ray Dollby Sound</a>
-                                <div class="grid-view-item__meta">
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$1,700.00</span></span>
-                                </div>
-                            </div>
+                    <div class="product-item bg-white overflow-hidden">
+                        <a href=""><img class="card-img-top product-img p-3"
+                                        src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_200x.png?v=1485678754"></a>
+                        <div class="product-detail text-center">
+                            <div class="product-title"><a href="">5.1 Channel Blu Ray Dollby Sound</a></div>
+                            <div class="product-price">$1,700.00</div>
                         </div>
                     </div>
+                    <div class="product-item bg-white overflow-hidden">
+                        <a href=""><img class="card-img-top product-img p-3"
+                                        src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_200x.png?v=1485678754"></a>
+                        <div class="product-detail text-center">
+                            <div class="product-title"><a href="">5.1 Channel Blu Ray Dollby Sound</a></div>
+                            <div class="product-price">$1,700.00</div>
 
-                    <div class="grid__item small--one-half medium--one-third large--one-quarter widescreen--one-fifth">
-
-                        <div class="grid-view-item wow fadeIn" data-wow-delay="100ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/sony-ht-iv300-5-1-channel-dvd-home-theatre">
-                                    <!-- product image -->
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/home-theater_200x.jpg?v=1485590992"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/home-theater_{width}x.jpg?v=1485590992"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.0"
-                                         data-sizes="auto" alt="5.1 Channel DVD Home Theatre">
-
-
-                                    <span class="product-labels rectangular"></span>
-
-                                </a>
-
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/sony-ht-iv300-5-1-channel-dvd-home-theatre"
-                                   class="grid-view-item__title">5.1 Channel DVD Home Theatre</a>
-
-                                <div class="grid-view-item__meta"><!-- snippet/product-price.liquid -->
-
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$369.00</span></span>
-
-                                </div>
-
-                            </div>
                         </div>
                     </div>
+                    <div class="product-item bg-white overflow-hidden">
+                        <a href=""><img class="card-img-top product-img p-3"
+                                        src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_200x.png?v=1485678754"></a>
+                        <div class="product-detail text-center">
+                            <div class="product-title"><a href="">5.1 Channel Blu Ray Dollby Sound</a></div>
+                            <div class="product-price">$1,700.00</div>
 
-                    <div class="grid__item small--one-half medium--one-third large--one-quarter widescreen--one-fifth">
-
-                        <div class="grid-view-item wow fadeIn" data-wow-delay="150ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/apple-mf886hn-a-intel-core-i5">
-                                    <!-- product image -->
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/apple-intel-core-1_200x.jpg?v=1485533584"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/apple-intel-core-1_{width}x.jpg?v=1485533584"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.0"
-                                         data-sizes="auto" alt="Apple MF886HN/A Intel Core i5">
-
-                                    <img src="" class="grid-view-item__image lazyload variantImg" alt=""/>
-
-                                    <span class="product-labels rectangular"></span>
-                                </a>
-
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/apple-mf886hn-a-intel-core-i5"
-                                   class="grid-view-item__title">Apple MF886HN/A Intel Core i5</a>
-                                <div class="grid-view-item__meta"><!-- snippet/product-price.liquid -->
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$1,200.00</span></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="grid__item small--one-half medium--one-third large--one-quarter widescreen--one-fifth">
-                        <div class="grid-view-item wow fadeIn" data-wow-delay="200ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/sony-bravia-klv-22p413d-22-inches-full-hd-led">
-                                    <!-- product image -->
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/Bravia-1_200x.jpg?v=1485592642"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/Bravia-1_{width}x.jpg?v=1485592642"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.0"
-                                         data-sizes="auto" alt="Bravia Full HD LED">
+                    <div class="product-item bg-white overflow-hidden">
+                        <a href=""><img class="card-img-top product-img p-3"
+                                        src="//cdn.shopify.com/s/files/1/1545/7777/products/audio_speakers_PNG11130_200x.png?v=1485678754"></a>
+                        <div class="product-detail text-center">
+                            <div class="product-title"><a href="">5.1 Channel Blu Ray Dollby Sound</a></div>
+                            <div class="product-price">$1,700.00</div>
 
-                                    <img src="" class="grid-view-item__image lazyload variantImg" alt=""/>
-
-                                    <span class="product-labels rectangular">
-            </span>
-                                </a>
-
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/sony-bravia-klv-22p413d-22-inches-full-hd-led"
-                                   class="grid-view-item__title">Bravia Full HD LED</a>
-
-                                <div class="grid-view-item__meta"><!-- snippet/product-price.liquid -->
-
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$700.00</span></span>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid__item small--one-half medium--one-third large--one-quarter widescreen--one-fifth">
-
-                        <div class="grid-view-item wow fadeIn" data-wow-delay="250ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/sony-dual-shock-3-ps3-wireless-controller">
-                                    <!-- product image -->
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/41ZYHhV28mL_200x.jpg?v=1485594472"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/41ZYHhV28mL_{width}x.jpg?v=1485594472"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.597444089456869"
-                                         data-sizes="auto" alt="Dualshock 3 PS3 Wireless Controller">
-
-                                    <img src="" class="grid-view-item__image lazyload variantImg" alt=""/>
-
-                                    <span class="product-labels rectangular">
-
-            </span>
-
-                                </a>
-
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/sony-dual-shock-3-ps3-wireless-controller"
-                                   class="grid-view-item__title">Dualshock 3 PS3 Wireless Controller</a>
-
-                                <div class="grid-view-item__meta">
-
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$200.00</span></span>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid__item small--one-half medium--one-third large--one-quarter widescreen--one-fifth">
-
-                        <div class="grid-view-item wow fadeIn" data-wow-delay="300ms">
-                            <div class="grid-view_image">
-                                <a class="grid-view-item__link"
-                                   href="/collections/entertainment/products/koryo-ds-1681-bluetooth-speaker">
-                                    <!-- product image -->
-                                    <img class="grid-view-item__image lazyload primary"
-                                         src="//cdn.shopify.com/s/files/1/1545/7777/products/Audio-Systems-1_200x.jpg?v=1476511137"
-                                         data-src="//cdn.shopify.com/s/files/1/1545/7777/products/Audio-Systems-1_{width}x.jpg?v=1476511137"
-                                         data-widths="[180, 360, 540, 720, 900, 1080, 1200]"
-                                         data-aspectratio="1.0"
-                                         data-sizes="auto" alt="Koryo DS 1681 Bluetooth Speaker">
-
-                                    <img src="" class="grid-view-item__image lazyload variantImg" alt=""/>
-
-                                    <span class="product-labels rectangular"></span>
-
-                                </a>
-
-                            </div>
-                            <div class="details">
-                                <a href="/collections/entertainment/products/koryo-ds-1681-bluetooth-speaker"
-                                   class="grid-view-item__title">Koryo DS 1681 Bluetooth Speaker</a>
-
-                                <div class="grid-view-item__meta"><!-- snippet/product-price.liquid -->
-
-                                    <span class="visually-hidden">Regular price</span>
-                                    <span class="product-price__price"><span class=money>$120.00</span></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</div>
-</main>
+    </main>
 </div>
 {% endblock %}

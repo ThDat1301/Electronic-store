@@ -424,7 +424,7 @@ position:relative;
     padding:8px 15px 8px;
     background-color:#ef8700;
     color:white;
-    font-family:"Roboto";
+    font-family:"Roboto", "Calibri";
     font-size:15px;
     font-weight:700;
     text-transform:uppercase;
@@ -455,11 +455,7 @@ cursor:pointer;
     margin-top:20px;
 }
 .text-link{
-display:inline;
-border:0 none;
-background:none;
-padding:0;
-margin:0;
+    display:inline;
 }
 .qtyField{
     display:table;
@@ -472,7 +468,7 @@ margin:0;
 .qtyField a input{
     background-color:#f5f5f5;
     color:#000;
-    font-family:"Roboto";
+    font-family:"Roboto", "Calibri";
     font-size:20px;
 }
 
@@ -571,27 +567,6 @@ margin:0;
 .slick-initialized .slick-slider{
 position:relative;
 display:block;
-}
-.grid__item{
-float:left;
-padding-left:30px;
-width:100%;
-}
-.grid--view-item{
-    margin-bottom:-20px;
-}
-.grid-view-item .grid-view_image .grid-view-item__link{
-    display:block;
-    white-space:nowrap;
-}
-.grid-view-item .grid-view_image .grid-view-item__image{
-display:inline-block;
-width:100%;
-vertical-align:middle;
-}
-.grid-view-item .grid-view__image:hover .variantImg{
-opacity:1;
-visibility:visible;
 }
 
 /*Product Detail's End*/
