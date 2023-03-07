@@ -267,7 +267,7 @@ footer {
 
 /*Product*/
 .card-body{
-    padding: 0%;
+    padding: 0;
 }
 .widget-content li:hover a {
     color: var(--color-ef8700)
@@ -364,7 +364,6 @@ footer {
 }
 
 .bill-head {
-
     background-color: #F9F9F9;
 }
 
@@ -521,7 +520,7 @@ footer {
 .information .wrapper-form label {
     min-width: 60px;
     font-size: 13px;
-    counter-reset: #555;
+    /*counter-reset: #555;*/
 }
 
 .information .wrapper-form .input-form {
