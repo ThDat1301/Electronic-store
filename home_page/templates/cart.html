@@ -14,22 +14,24 @@
                 </ul>
             </div>
             <div class="bill-body">
-                <ul class="bill-detail">
-                    <li class="bill-item item-name">
-                        <img src="https://cdn.shopify.com/s/files/1/1545/7777/products/coolpix-black_100x.jpg?v=1516209979" alt="item picture" class="item-img">
-                        <p class="item-fullname">Coupon Inside Acer DLP 3D Projector</p>
-                    </li>
-                    <li class="bill-item item-price">$329.00</li>
-                    <li class="bill-item item-quantity">
-                        <div class="wrapper">
-                            <span class="minus">-</span>
-                            <span class="num">01</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <div class="button btn-delete"><i class="fa-solid fa-xmark"></i></i> REMOVE</div>
-                    </li>
-                    <li class="bill-item item-total">$329.00</li>
-                </ul>
+                {% for key, value in cart.items %}
+                    <ul class="bill-detail">
+                        <li class="bill-item item-name">
+                            <img src="{% static ''%}{{ value.image }}" alt="item picture" class="item-img">
+                            <p class="item-fullname">{{ value.name }}</p>
+                        </li>
+                        <li class="bill-item item-price">{{ value.price }}</li>
+                        <li class="bill-item item-quantity">
+                            <div class="wrapper">
+                                <span class="minus">-</span>
+                                <span class="num">{{ value.quantity }}</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <div class="button btn-delete"><i class="fa-solid fa-xmark"></i> REMOVE</div>
+                        </li>
+                        <li class="bill-item item-total">{% widthratio value.price 1 value.quantity %}</li>
+                    </ul>
+                {% endfor %}
             </div>
 
         </div>
@@ -60,7 +62,7 @@
                 </div>
             </div>
             <div class="payment">
-                <div class="info-header">SUBTOTAL $329.00</div>
+                <div class="info-header">SUBTOTAL: ${{ total }}</div>
                 <div class="sub-info-header">Shipping & taxes calculated at checkout</div>
                 <div class="payment-btn">
                     <button class="button btn-update">UPDATE</button>

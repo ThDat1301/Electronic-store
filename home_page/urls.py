@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from . import template_context
 
 urlpatterns = [
     path('', views.index, name='home_page'),
@@ -9,5 +10,6 @@ urlpatterns = [
     path('product/<int:prod_id>/', views.product_detail, name='product_detail'),
     path('accounts/signup/', views.signup, name='signup'),
     path('accounts/login/', views.login, name='login'),
-    path('logout', views.logout, name='logout')
+    path('logout', views.logout, name='logout'),
+    path('add-to-cart', template_context.add_To_Cart, name='add_To_Cart')
 ]

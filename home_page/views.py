@@ -18,12 +18,21 @@ def index(request):
     return render(request, 'index.html')
 
 
+
 def cart(request):
-    template = loader.get_template('cart.html')
-    return HttpResponse(template.render())
+    total = 0
+    if 'cart' in request.session:
+        for key, value in request.session['cart'].items():
+            total += float(value['price'])*int(value['quantity'])
+        return render(request, 'cart.html', {
+            'cart': request.session['cart'],
+            'totalitems':len(request.session['cart']),
+            'total': total
+        })
 
-
-def product_detail(request):
+def product_detail(request, cate_id):
+    category = Category.objects.get(id=cate_id)
+    product = Product.objects.filter(category=category).order_by('-id')
     template = loader.get_template('product_detail.html')
     return HttpResponse(template.render())
 
