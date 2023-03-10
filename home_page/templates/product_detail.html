@@ -22,7 +22,9 @@
 <div class="page-container container" id="PageContainer">
     <main class="main-content" id="MainContent" role="main">
         <div id="shopify-section-product-template" class="shopify-section">
-
+            <div class="product-template__container page-width"
+                 id="ProductSection-product-template" data-section-id="product-template" data-section-type="product"
+                 data-enable-history-state="true">
 
                 <meta itemprop="name" content="32J4100 32 inches HD Ready LED TV">
                 <meta itemprop="url"
@@ -36,64 +38,62 @@
                             <div id="FeaturedImageZoom-product-template"
                                  class="product-single__photo product-single__photo--has-thumbnails lightbox"
                                  data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_1200x1200.jpg?v=1516260250">
-                                <img src="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_600x.jpg?v=1516260250"
-                                     alt="32J4100 32 inches HD Ready LED TV" id="FeaturedImage-product-template"
-                                     class="product-featured-img js-zoom-enabled">
+                                <img class="product-featured-img js-zoom-enabled" src="{% static '' %}{{ product.image }}">
                             </div>
 
                         </div>
 
-                        <div class="thumbnails-wrapper">
-                            <div class="grid">
-
-                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">
-                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_600x.jpg?v=1516260250"
-                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"
-                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_1200x1200.jpg?v=1516260250">
-                                        <img class="product-single__thumbnail-image"
-                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_160x.jpg?v=1516260250"
-                                             alt="32J4100 32 inches HD Ready LED TV">
-                                    </a>
-                                </div>
-
-                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">
-                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_600x.jpg?v=1516260250"
-                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"
-                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_1200x1200.jpg?v=1516260250">
-                                        <img class="product-single__thumbnail-image"
-                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_160x.jpg?v=1516260250"
-                                             alt="32J4100 32 inches HD Ready LED TV">
-                                    </a>
-                                </div>
-
-                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">
-                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_600x.jpg?v=1516260250"
-                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"
-                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_1200x1200.jpg?v=1516260250">
-                                        <img class="product-single__thumbnail-image"
-                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_160x.jpg?v=1516260250"
-                                             alt="32J4100 32 inches HD Ready LED TV">
-                                    </a>
-                                </div>
-
-                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">
-                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_600x.jpg?v=1516260250"
-                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"
-                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_1200x1200.jpg?v=1516260250">
-                                        <img class="product-single__thumbnail-image"
-                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_160x.jpg?v=1516260250"
-                                             alt="32J4100 32 inches HD Ready LED TV">
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
+{#                        <div class="thumbnails-wrapper">#}
+{#                            <div class="grid">#}
+{##}
+{#                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">#}
+{#                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_600x.jpg?v=1516260250"#}
+{#                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"#}
+{#                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_1200x1200.jpg?v=1516260250">#}
+{#                                        <img class="product-single__thumbnail-image"#}
+{#                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_160x.jpg?v=1516260250"#}
+{#                                             alt="32J4100 32 inches HD Ready LED TV">#}
+{#                                    </a>#}
+{#                                </div>#}
+{##}
+{#                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">#}
+{#                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_600x.jpg?v=1516260250"#}
+{#                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"#}
+{#                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_1200x1200.jpg?v=1516260250">#}
+{#                                        <img class="product-single__thumbnail-image"#}
+{#                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-2_160x.jpg?v=1516260250"#}
+{#                                             alt="32J4100 32 inches HD Ready LED TV">#}
+{#                                    </a>#}
+{#                                </div>#}
+{##}
+{#                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">#}
+{#                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_600x.jpg?v=1516260250"#}
+{#                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"#}
+{#                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_1200x1200.jpg?v=1516260250">#}
+{#                                        <img class="product-single__thumbnail-image"#}
+{#                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-1_72779740-0fae-411c-bc6e-4f98a63e461d_160x.jpg?v=1516260250"#}
+{#                                             alt="32J4100 32 inches HD Ready LED TV">#}
+{#                                    </a>#}
+{#                                </div>#}
+{##}
+{#                                <div class="grid__item small--one-third large-up--one-fifth product-single__thumbnails-item">#}
+{#                                    <a href="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_600x.jpg?v=1516260250"#}
+{#                                       class="text-link product-single__thumbnail product-single__thumbnail--product-template"#}
+{#                                       data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_1200x1200.jpg?v=1516260250">#}
+{#                                        <img class="product-single__thumbnail-image"#}
+{#                                             src="//cdn.shopify.com/s/files/1/1545/7777/products/samsung-2_6e346ca3-76e4-4084-93a5-cdcd1977cf6b_160x.jpg?v=1516260250"#}
+{#                                             alt="32J4100 32 inches HD Ready LED TV">#}
+{#                                    </a>#}
+{#                                </div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
 
                     </div>
 
                     <div class="grid__item medium-up--one-half">
                         <div class="product-single__meta">
-                            <h1 itemprop="name" class="product-single__title">32J4100 32 inches HD Ready LED TV</h1>
+                            <h1 itemprop="name" class="product-single__title">{{ product.name }}V</h1>
 
                             <div itemprop="offers">
                                 <meta itemprop="priceCurrency" content="USD">
@@ -103,7 +103,7 @@
                                     <s id="ComparePrice-product-template" class="hide"></s>
                                     <span class="product-price__price product-price__price-product-template">
                     <span id="ProductPrice-product-template" itemprop="price" content="779.0"><span
-                            class=money>$779.00</span></span>
+                            class=money>${{ product.price }}</span></span>
                     <span class="product-price__sale-label product-price__sale-label-product-template hide">Sale</span>
                   </span>
 
@@ -119,15 +119,23 @@
 
                                 <p class="product-stock">
                                     Availability:
-                                    <span class="instock ">Available</span>
+
+                                    <span class="instock ">
+                                        {% if product.active == 1 %}
+                                            Available
+                                        {% else %}
+                                            Out of stock
+                                        {% endif %}
+                                    </span>
+
                                     <span class="outstock hide">Unavailable</span>
                                 </p>
 
-                                <p class="product-type">Product Type: <span>LCD LED Televisions</span></p>
-
-                                <p class="product-type">Product Vendor: <span>Samsung</span></p>
-
-                                <p class="product-sku">Product SKU: <span class="variant-sku">32J4100</span></p>
+{#                                <p class="product-type">Product Type: <span>LCD LED Televisions</span></p>#}
+{##}
+{#                                <p class="product-type">Product Vendor: <span>Samsung</span></p>#}
+{##}
+{#                                <p class="product-sku">Product SKU: <span class="variant-sku">32J4100</span></p>#}
 
                             </div>
 

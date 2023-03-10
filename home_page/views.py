@@ -18,7 +18,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-
 def cart(request):
     total = 0
     if 'cart' in request.session:
@@ -30,11 +29,10 @@ def cart(request):
             'total': total
         })
 
-def product_detail(request, cate_id):
-    category = Category.objects.get(id=cate_id)
-    product = Product.objects.filter(category=category).order_by('-id')
-    template = loader.get_template('product_detail.html')
-    return HttpResponse(template.render())
+
+def product_detail(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'product_detail.html', {'product': product})
 
 
 def signup(request):

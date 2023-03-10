@@ -137,20 +137,20 @@
                         <div class="product-item bg-white overflow-hidden">
                             <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static ''%}{{ p.image }}" alt={{ p.name }}></a>
                             <div class="btn-set d-flex flex-column">
-                                <button class="icon d-flex mb-1 border-0"><i class="fa-regular fa-heart icon-heart"></i></button>
+                                <a class="icon d-flex mb-1 border-0"><i class="fa-regular fa-heart icon-heart"></i></a>
 
-                                <button class="icon d-flex mb-1 border-0 addToCartBtn"
+                                <a class="icon d-flex mb-1 border-0 addToCartBtn"
                                         data-id="{{ p.id }}"
                                         data-title="{{ p.name }}"
                                         data-price="{{ p.price }}"
                                         data-image="{{ p.image }}"
                                 >
                                     <i class="fa-solid fa-cart-shopping icon-cart-shopping"></i>
-                                </button>
+                                </a>
 
-                                <button class="icon d-flex mb-1 border-0" >
+                                <a href="/product/{{ p.id }}" class="icon d-flex mb-1 border-0" >
                                     <i class="fa-solid fa-magnifying-glass icon-magnifying-glass"></i>
-                                </button>
+                                </a>
                             </div>
                             <div class="product-detail text-center">
                                 <div class="product-title" id="product-title" data-title="{{ p.name }}" ><a href="#">{{ p.name }}</a></div>
