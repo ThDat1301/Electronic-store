@@ -29,7 +29,7 @@
 
                 <a class="d-inline-block ms-auto" href="/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge bg-info">0</span>
+                    <span class="badge bg-info cart-list">{{ request.session.cart|length }}</span>
                 </a>
             </div>
         </div>
