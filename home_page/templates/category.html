@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <div class="w-100 mt-5">
         <div class="container bg-white">
             <div class="row">
@@ -23,29 +24,32 @@
                         <div class="sidebar_widget border mb-3">
                             <div class="widget-title">FILTER BY PRICE</div>
                             <div class="widget-content">
-                                <ul class="p-0">
-                                    <li class="p-1">
-                                        <input type="checkbox"/>
-                                        <span>Under $100</span>
-                                    </li>
-                                    <li class="p-1">
-                                        <input type="checkbox"/>
-                                        <span>$100 - $300</span>
-                                    </li>
-                                    <li class="p-1">
-                                        <input type="checkbox"/>
-                                        <span>$300 - $500</span>
-                                    </li>
-                                    <li class="p-1">
-                                        <input type="checkbox"/>
-                                        <span>$500 - $1000</span>
-                                    </li>
-                                    <li class="p-1">
-                                        <input type="checkbox"/>
-                                        <span>$1000 - $1500</span>
-                                    </li>
+                                <input type="range" style="padding:0px;" value="{{ minmaxPrice.price__min}}" min="{{ minmaxPrice.price__min}}" max="{{ minmaxPrice.price__max  }}" id="rangeInput" oninput="maxPrice.value=this.value">
+                                <div>MAX: <input type="number" value="{{ minmaxPrice.price__min}}" min="{{ minmaxPrice.price__min}}" max="{{ minmaxPrice.price__max  }}" id="maxPrice" onkeyup="rangeInput.value=this.value"></div>
+                                <div><button id="btnFilterPrice" class="btn btn-info mt-1">Lọc</button></div>
+<!--                                <ul class="p-0">-->
+<!--                                    <li class="p-1">-->
+<!--                                        <input type="checkbox"/>-->
+<!--                                        <span>Under $100</span>-->
+<!--                                    </li>-->
+<!--                                    <li class="p-1">-->
+<!--                                        <input type="checkbox"/>-->
+<!--                                        <span>$100 - $300</span>-->
+<!--                                    </li>-->
+<!--                                    <li class="p-1">-->
+<!--                                        <input type="checkbox"/>-->
+<!--                                        <span>$300 - $500</span>-->
+<!--                                    </li>-->
+<!--                                    <li class="p-1">-->
+<!--                                        <input type="checkbox"/>-->
+<!--                                        <span>$500 - $1000</span>-->
+<!--                                    </li>-->
+<!--                                    <li class="p-1">-->
+<!--                                        <input type="checkbox"/>-->
+<!--                                        <span>$1000 - $1500</span>-->
+<!--                                    </li>-->
 
-                                </ul>
+<!--                                </ul>-->
                             </div>
                         </div>
 
@@ -53,12 +57,11 @@
                             <div class="widget-title">FILTER BY COLOR</div>
                             <div class="widget-content">
                                 <ul class="p-0 d-flex">
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: black;"></a></li>
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: red;"></a></li>
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: blue;"></a></li>
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: pink;"></a></li>
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px;"><a href="#" class="w-100 h-100 d-block" style="background-color: white;"></a></li>
-
+                                    {% for c in colors %}
+                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px; background-color:{{c.color_code}};">
+                                        <input class="filter-checkbox" type="checkbox" data-filter="color" value="{{c.id}}">
+                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -132,7 +135,7 @@
                         <h1>{{ category.name }}</h1>
                         <div class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rerum aperiam corporis minima quod. Hic, voluptas? Laudantium sed ex blanditiis ipsam necessitatibus molestiae illo deleniti, dolor voluptatibus tempore molestias aliquid.</div>
                     </header>
-                    <div class="productList d-flex flex-wrap">
+                    <div class="productList d-flex flex-wrap" id="productList">
                         {% for p in product %}
                         <div class="product-item bg-white overflow-hidden">
                             <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static ''%}{{ p.image }}" alt={{ p.name }}></a>

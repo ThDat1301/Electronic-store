@@ -1,12 +1,21 @@
-from home_page.models import Category
+from django.db.models import Min, Max
+from home_page.models import Category, Product, Color
 from django.http import JsonResponse
 
 def get_category(request):
     categories = Category.objects.all()
+    colors = Color.objects.all();
+    maxminPrice = Product.objects.aggregate(Min('price'), Max('price'))
     data = {
         'categories': categories,
+        'minmaxPrice': maxminPrice,
+        'colors': colors
     }
     return data
+
+
+    return data
+
 
 def add_To_Cart(request):
     if 'cart' not in request.session:

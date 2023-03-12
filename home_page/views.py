@@ -1,9 +1,11 @@
 from django.contrib.auth import authenticate, login as login_process, logout as logout_process
 from django.db.models import Count
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.contrib import messages
+from django.template.loader import render_to_string
+
 from home_page.models import Category, Product, User
 
 
@@ -75,3 +77,19 @@ def login(request):
 def logout(request):
     logout_process(request)
     return redirect('login')
+
+def filter_product(request):
+    colors = request.GET.getlist('color[]')
+    minPrice=request.GET['minPrice']
+    maxPrice=request.GET['maxPrice']
+
+    products = Product.objects.all()
+    products = products.filter(price__gte=minPrice)
+    products = products.filter(price__lte=maxPrice)
+    if len(colors) > 0:
+        products = products.filter(variant__color_id__in=colors)
+
+    t = render_to_string('ajax/product_list.html', {'product': products})
+    return JsonResponse({'data': t})
+
+
