@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="bill-container">
-        <h2>YOUR CARD</h2>
+        <h2>YOUR CART</h2>
         <div class="bill">
             <div class="bill-head">
                 <ul class="head-list">
@@ -13,7 +13,7 @@
                     <li class="bill-item item-total">TOTAL</li>
                 </ul>
             </div>
-            <div class="bill-body">
+            <div class="bill-body"  id="cartList" >
                 {% for key, value in cart.items %}
                     <ul class="bill-detail">
                         <li class="bill-item item-name">
@@ -21,13 +21,27 @@
                             <p class="item-fullname">{{ value.name }}</p>
                         </li>
                         <li class="bill-item item-price">{{ value.price }}</li>
-                        <li class="bill-item item-quantity">
+                        <li class="bill-item item-quantity d-flex flex-column   ">
                             <div class="wrapper">
-                                <span class="minus">-</span>
-                                <span class="num">{{ value.quantity }}</span>
-                                <span class="plus">+</span>
+                                <button class="minusBtn  reduceFromCartBtn" onclick="minutBtn()"
+                                        data-id="{{ value.id }}"
+                                        data-title="{{ value.name }}"
+                                        data-price="{{ value.price }}"
+                                        data-image="{{ value.image }}"
+                                >
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input type="text" value="{{ value.quantity }}" class="qty" id="qty-{{ value.id }}"/>
+                                <button class="plusBtn addToCartBtn" onclick="plustBtn()"
+                                        data-id="{{ value.id }}"
+                                        data-title="{{ value.name }}"
+                                        data-price="{{ value.price }}"
+                                        data-image="{{ value.image }}"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
                             </div>
-                            <div class="button btn-delete"><i class="fa-solid fa-xmark"></i> REMOVE</div>
+                            <div class="button btn-delete" data-item="{{ value.id }}"><i class="fa-solid fa-xmark"></i> REMOVE</div>
                         </li>
                         <li class="bill-item item-total">{% widthratio value.price 1 value.quantity %}</li>
                     </ul>
@@ -72,26 +86,6 @@
         </div>
     </div>
     <script>
-        const plus = document.querySelector(".plus"),
-        minus = document.querySelector(".minus"),
-        num = document.querySelector(".num");
 
-        let a = 1;
-
-        plus.addEventListener("click", ()=>{
-            a++;
-            a = (a < 10)? "0" + a : a;
-            num.innerHTML = a;
-            console.log(a);
-        });
-
-        minus.addEventListener("click", ()=>{
-            if (a > 1)
-            {
-                a--;
-                a = (a < 10)? "0" + a : a;
-                num.innerHTML = a;
-            }
-        });
     </script>
 {% endblock %}
