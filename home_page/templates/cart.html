@@ -64,9 +64,12 @@
             <div class="payment">
                 <div class="info-header">SUBTOTAL: ${{ total }}</div>
                 <div class="sub-info-header">Shipping & taxes calculated at checkout</div>
-                <div class="payment-btn">
-                    <button class="button btn-update">UPDATE</button>
-                    <button class="button btn-checkout">CHECKOUT</button>
+                <div>
+                    <form class="payment-btn" action="/checkout/" METHOD="POST">
+                        <button class="button btn-update">UPDATE</button>
+                        <button class="button btn-checkout">CHECKOUT</button>
+
+                    </form>
                 </div>
             </div>
         </div>

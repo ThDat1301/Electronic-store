@@ -1,10 +1,15 @@
 from django.contrib.auth import authenticate, login as login_process, logout as logout_process
 from django.db.models import Count
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.contrib import messages
 from home_page.models import Category, Product, User
+import stripe
+from django.conf import settings
+from django.views import View
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def category(request, cate_id):
@@ -75,3 +80,21 @@ def login(request):
 def logout(request):
     logout_process(request)
     return redirect('login')
+
+
+def checkOutWithStripe(request):
+    YOUR_DOMAIN = 'http://127.0.0.1:8000/'
+    checkout_session = stripe.checkout.Session.create(
+        line_items=[
+            {
+                # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                'price': '200',
+                'quantity': 1,
+            },
+        ],
+        mode='payment',
+        success_url=YOUR_DOMAIN + '/success',
+        cancel_url=YOUR_DOMAIN + '/cancel',
+    )
+    return redirect(request, checkout_session.url)
+

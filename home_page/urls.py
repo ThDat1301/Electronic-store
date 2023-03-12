@@ -11,6 +11,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('accounts/login/', views.login, name='login'),
     path('logout', views.logout, name='logout'),
-    path('add-to-cart', template_context.add_To_Cart, name='add_To_Cart')
+    path('add-to-cart', template_context.add_To_Cart, name='add_To_Cart'),
+    path('checkout/', views.checkOutWithStripe, name='checkout')
 
 ]
