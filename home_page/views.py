@@ -27,12 +27,14 @@ def cart(request):
     total = 0
     if 'cart' in request.session:
         for key, value in request.session['cart'].items():
-            total += float(value['price'])*int(value['quantity'])
-        return render(request, 'cart.html', {
-            'cart': request.session['cart'],
-            'totalitems':len(request.session['cart']),
-            'total': total
-        })
+            total += float(value['price']) * float(value['quantity'])
+    else:
+        request.session['cart'] = {}
+    return render(request, 'cart.html', {
+        'cart': request.session['cart'],
+        'totalitems':len(request.session['cart']),
+        'total': total
+    })
 
 
 def product_detail(request, product_id):
