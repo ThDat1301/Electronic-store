@@ -1,3 +1,5 @@
+import json
+
 from django.contrib.auth import authenticate, login as login_process, logout as logout_process
 from django.db.models import Count
 from django.shortcuts import render, redirect
@@ -32,7 +34,7 @@ def cart(request):
         request.session['cart'] = {}
     return render(request, 'cart.html', {
         'cart': request.session['cart'],
-        'totalitems':len(request.session['cart']),
+        'totalitems': len(request.session['cart']),
         'total': total
     })
 
@@ -86,17 +88,39 @@ def logout(request):
 
 def checkOutWithStripe(request):
     YOUR_DOMAIN = 'http://127.0.0.1:8000/'
-    checkout_session = stripe.checkout.Session.create(
-        line_items=[
-            {
-                # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                'price': '200',
-                'quantity': 1,
-            },
-        ],
-        mode='payment',
-        success_url=YOUR_DOMAIN + '/success',
-        cancel_url=YOUR_DOMAIN + '/cancel',
-    )
-    return redirect(request, checkout_session.url)
+    data = []
 
+    for key, value in request.session['cart'].items():
+        data.append(
+            {
+                'name': value["name"],
+                'quantity': value["quantity"],
+            }
+        )
+    for d in data:
+        for p in stripe.Product.list(limit=100)["data"]:
+            for pr in stripe.Price.list(limit=100)["data"]:
+                if d["name"] == p["name"]:
+                    if p["id"] == pr["product"]:
+                        d['price'] = pr["id"]
+                        break
+        del d["name"]
+
+    checkout_session = stripe.checkout.Session.create(
+        # line_items=[
+        #     {
+        #         'price': 100,
+        #         'quantity': 1,
+        #     },
+        #     {
+        #         'price': 100,
+        #         'quantity': 1,
+        #     }
+        # ],
+        line_items=data,
+        mode='payment',
+        success_url=YOUR_DOMAIN + '/',
+        cancel_url=YOUR_DOMAIN + '/cart',
+    )
+
+    return redirect(checkout_session.url, code=303)

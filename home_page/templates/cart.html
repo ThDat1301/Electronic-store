@@ -79,7 +79,7 @@
                 <div class="info-header">SUBTOTAL: ${{ total }}</div>
                 <div class="sub-info-header">Shipping & taxes calculated at checkout</div>
                 <div>
-                    <form class="payment-btn" action="/checkout/" METHOD="POST">
+                    <form class="payment-btn" action="{% url 'checkout' %}" METHOD="POST">
                         <button class="button btn-update">UPDATE</button>
                         <button class="button btn-checkout">CHECKOUT</button>
 
@@ -88,7 +88,5 @@
             </div>
         </div>
     </div>
-    <script>
-
-    </script>
+    <script src="https://js.stripe.com/v3/"></script>
 {% endblock %}
