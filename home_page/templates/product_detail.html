@@ -9,9 +9,9 @@
                     <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
                         <a href="/" title="Back to the home page">Home</a>
                         <span aria-hidden="true">&rsaquo;</span>
-                        <a href="/collections/frontpage" title="">Home page</a>
+                        <a href="/category/{{ product.category.id }}" title="">{{ product.category }}</a>
                         <span aria-hidden="true">&rsaquo;</span>
-                        <span>32J4100 32 inches HD Ready LED TV</span>
+                        <a href="?">{{ product.name }}</a>
                     </nav>
                 </div>
             </div>
@@ -26,12 +26,6 @@
                      id="ProductSection-product-template" data-section-id="product-template" data-section-type="product"
                      data-enable-history-state="true">
 
-                    <meta itemprop="name" content="32J4100 32 inches HD Ready LED TV">
-                    <meta itemprop="url"
-                          content="https://ngmulltistore.myshopify.com/products/samsung-32j4100-32-inches-hd-ready-led-tv">
-                    <meta itemprop="image"
-                          content="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_800x.jpg?v=1516260250">
-
                     <div class="grid product-single">
                         <div class="grid__item product-single__photos medium-up--one-half">
                             <div class="prod-large-img">
@@ -39,7 +33,7 @@
                                      class="product-single__photo product-single__photo--has-thumbnails lightbox"
                                      data-zoom="//cdn.shopify.com/s/files/1/1545/7777/products/32J4100-1_1200x1200.jpg?v=1516260250">
                                     <img class="product-featured-img js-zoom-enabled"
-                                         src="{% static '' %}{{ product.image }}">
+                                         src="{% static '' %}{{ product.image }}" width="600" height="450">
                                 </div>
 
                             </div>
@@ -48,7 +42,7 @@
                         </div>
                         <div class="grid__item medium-up--one-half">
                             <div class="product-single__meta">
-                                <h1 itemprop="name" class="product-single__title">{{ product.name }}V</h1>
+                                <h1 itemprop="name" class="product-single__title">{{ product.name }}</h1>
 
                                 <div itemprop="offers">
                                     <meta itemprop="priceCurrency" content="USD">
@@ -120,7 +114,6 @@
                                     </div>
                                     <div class="product-action">
                                         <div class="product-form__item--quantity">
-                                            <div class="wrapQtyBtn">
                                                 <div class="qtyField">
                                                     <a class="qtyBtn minus">
                                                         <center>-</center>
@@ -130,8 +123,20 @@
                                                     <a class="qtyBtn plus">
                                                         <center>+</center>
                                                     </a>
+                                                    <script>
+                                                        {
+                                                            $(".qtyBtn").on("click", function() {
+                                                            var oldValue = jQuery("#quantity").val(),
+                                                                newValue = 1;
+                                                            if ($(this).is(".plus")) {
+                                                              newValue = parseInt(oldValue) + 1;
+                                                            } else if (oldValue > 1) {
+                                                              newValue = parseInt(oldValue) - 1;
+                                                            }
+                                                            $("#quantity").val(newValue);
+                                                          });}
+                                            </script>
                                                 </div>
-                                            </div>
                                         </div>
                                         <div class="product-form__item--submit">
                                             <button type="submit" name="add" id="addToCartBtn"
@@ -144,10 +149,11 @@
                                             </button>
 
                                         </div>
+
                                     </div>
                                 </form>
 
-                                <div class="productglobaltext">
+                                <div>
                                     <ul>
                                         <li>Exchange or Return within 7 days of a delivery</li>
                                         <li>100% quality Guaranteed Plus Fast & Secure Shipping</li>
@@ -161,45 +167,16 @@
                     <div class="tabs-listing">
                         <div class="tab-container">
 
-                            <h3 class="acor-ttl medium-up--hide"><a class="tablink" href="#tab1">Product Details</a>
+                            <h3 class="acor-ttl medium-up--hide"><a class="tablink">Product Details</a>
                             </h3>
                             <div id="tab1" class="tab-content grid-products">
-                                <div class="product-description rte" itemprop="description"><strong>Lorem Ipsum</strong>
+                                <div class="product-description rte" itemprop="description" font-size="">Lorem Ipsum
                                     is
                                     simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                     industry's standard dummy text ever since the 1500s, when an unknown printer took a
                                     galley of type and scrambled it to make a type specimen book. It has survived not
                                     only
-                                    five centuries, but also the leap into electronic typesetting, remaining essentially
-                                    unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                                    containing Lorem Ipsum passages, and more recently with desktop publishing software
-                                    like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
-                                </div>
-                            </div>
-                            <div id="tab2" class="tab-content grid-products">
-                                <div id="shopify-product-reviews" data-id="6452620165">
-                                    <div class="spr-container">
-                                        <div class="spr-header">
-                                            <h2 class="spr-header-title">Customer Reviews</h2>
-                                            <div class="spr-summary">
-        <span class="spr-starrating spr-summary-starrating">
-          <i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i
-                class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i
-                class="spr-icon spr-icon-star"></i>
-        </span>
-                                                <span class="spr-summary-caption">
-                                                <span class='spr-summary-actions-togglereviews'>Based on 1 review</span>
-        </span><span class="spr-summary-actions">
-        <a href='#' class='spr-summary-actions-newreview' onclick='SPR.toggleForm(6452620165);return false'>Write a review</a>
-      </span>
-                                            </div>
-                                        </div>
-                                        <div class="spr-content">
-                                            <div class='spr-form' id='form_6452620165'></div>
-                                            <div class='spr-reviews' id='reviews_6452620165'></div>
-                                        </div>
-                                    </div>
+                                    five centuries, but also the leap into electronic typesetting.
                                 </div>
                             </div>
                         </div>

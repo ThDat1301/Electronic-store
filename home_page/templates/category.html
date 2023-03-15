@@ -134,7 +134,7 @@
                     </header>
                     <div class="productList d-flex flex-wrap">
                         {% for p in product %}
-                        <div class="product-item bg-white overflow-hidden d-flex flex-column">
+                        <div class="product-item bg-white overflow-hidden d-flex flex-column" href="/product/{{p.id}}">
                             <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static ''%}{{ p.image }}" alt={{ p.name }}></a>
                             <div class="btn-set d-flex flex-column">
                                 <a class="icon d-flex mb-1 border-0"><i class="fa-regular fa-heart icon-heart"></i></a>
