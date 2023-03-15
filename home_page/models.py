@@ -54,3 +54,4 @@ class OrderDetail(models.Model):
     order = models.ForeignKey(Order, related_name='order_detail', on_delete=models.DO_NOTHING)
 
 
+

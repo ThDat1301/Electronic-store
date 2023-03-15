@@ -12,9 +12,9 @@
                         <i class="fa-solid fa-right-to-bracket"></i>
                         Logout
                     </a>
-                    <a class="d-inline-block" href="#">
+                    <a class="d-inline-block" href="{% url 'my_order' %}">
                         <i class="fa-solid fa-user"></i>
-                        My Account
+                        {{ user }}
                     </a>
                 {% else %}
                     <a class="d-inline-block" href="{% url 'login' %}">

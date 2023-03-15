@@ -15,12 +15,12 @@
                     {% csrf_token %}
                     <div class="form-floating my-3">
                         <input type="text" class="form-control" id="floatingInputUN" placeholder="User name"
-                               name="username">
+                               name="username" required>
                         <label for="floatingInputUN">User Name</label>
                     </div>
                     <div class="form-floating my-3">
                         <input type="password" class="form-control" id="floatingInputP" placeholder="Password"
-                               name="password">
+                               name="password" required>
                         <label for="floatingInputP">Password</label>
                     </div>
                     <div class="form-floating mb-3 d-flex justify-content-center">
