@@ -8,14 +8,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.contrib import messages
+from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
-
 from home_page.models import Category, Product, User, Order, OrderDetail
 import stripe
 from django.conf import settings
 from django.views import View
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
 
 
 def category(request, cate_id):
@@ -88,6 +89,18 @@ def login(request):
 def logout(request):
     logout_process(request)
     return redirect('login')
+
+
+def filter_product(request):
+    minPrice=request.GET['minPrice']
+    maxPrice=request.GET['maxPrice']
+
+    products = Product.objects.all()
+    products = products.filter(price__gte=minPrice)
+    products = products.filter(price__lte=maxPrice)
+
+    t = render_to_string('ajax/product_list.html', {'product': products})
+    return JsonResponse({'data': t})
 
 
 def checkOutWithStripe(request):
@@ -163,5 +176,4 @@ def order_detail(request, order_id):
                    'products': products,
                    'total_price': total_price},
                   )
-
 
