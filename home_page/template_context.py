@@ -1,15 +1,13 @@
 from django.db.models import Min, Max
-from home_page.models import Category, Product, Color
+from home_page.models import Category, Product
 from django.http import JsonResponse
 
 def get_category(request):
     categories = Category.objects.all()
-    colors = Color.objects.all();
     maxminPrice = Product.objects.aggregate(Min('price'), Max('price'))
     data = {
         'categories': categories,
-        'minmaxPrice': maxminPrice,
-        'colors': colors
+        'minmaxPrice': maxminPrice
     }
     return data
 

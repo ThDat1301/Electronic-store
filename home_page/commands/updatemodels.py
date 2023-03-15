@@ -4,7 +4,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ['DJANGO_SETTINGS_MODULE'] = 'electronic-store.settings'
 application = get_wsgi_application()
 
-from home_page.models import Category, Product, Color
+from home_page.models import Category, Product
 
 
 def create_category():
@@ -132,23 +132,11 @@ def create_product():
                                      price='29',
                                      category=health_beauty_category)
 
-def create_color():
-    Color.objects.update_or_create(title='Red',
-                                   color_code='#FF0000')
-    Color.objects.update_or_create(title='Black',
-                                   color_code='#000000')
-    Color.objects.update_or_create(title='Blue',
-                                   color_code='#002BFF')
-    Color.objects.update_or_create(title='Pink',
-                                   color_code='#FFB9E1')
-    Color.objects.update_or_create(title='White',
-                                   color_code='#FFFFFF')
-
 
 if __name__ == '__main__':
     create_category()
     create_product()
-    create_color()
+
 
 
 

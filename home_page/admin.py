@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import mark_safe
-from .models import Category, Product, User, ProductVariant
+from .models import Category, Product, User
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -15,6 +15,5 @@ class ProductAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Category)
-admin.site.register(ProductVariant)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(User)
