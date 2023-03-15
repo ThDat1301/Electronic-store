@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h5 class="text-center">My Order</h5>
+
+        <div class="row">
+            {% for o in orders %}
+
+            <div class="col-3">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row p-3">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">ID: {{ o.id}}</h5>
+                                <p class="card-text">Order Date: {{ o.orderDate }}</p>
+                                <a class="btn btn-primary" href="/myorder/{{ o.id }}">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

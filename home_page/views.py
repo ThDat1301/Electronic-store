@@ -1,12 +1,16 @@
 import json
+from urllib import request
 
+from MySQLdb.times import Date
 from django.contrib.auth import authenticate, login as login_process, logout as logout_process
 from django.db.models import Count
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.contrib import messages
-from home_page.models import Category, Product, User
+from django.views.decorators.csrf import csrf_exempt
+
+from home_page.models import Category, Product, User, Order, OrderDetail
 import stripe
 from django.conf import settings
 from django.views import View
@@ -97,10 +101,11 @@ def checkOutWithStripe(request):
                 'quantity': value["quantity"],
             }
         )
+
     for d in data:
         for p in stripe.Product.list(limit=100)["data"]:
-            for pr in stripe.Price.list(limit=100)["data"]:
-                if d["name"] == p["name"]:
+            if d["name"] == p["name"]:
+                for pr in stripe.Price.list(limit=100)["data"]:
                     if p["id"] == pr["product"]:
                         d['price'] = pr["id"]
                         break
@@ -119,8 +124,44 @@ def checkOutWithStripe(request):
         # ],
         line_items=data,
         mode='payment',
-        success_url=YOUR_DOMAIN + '/',
+        success_url=YOUR_DOMAIN + '',
         cancel_url=YOUR_DOMAIN + '/cart',
     )
-
+    order = Order.objects.create(orderDate=Date.today(),
+                                 user_id=request.user.id,
+                                 )
+    for key, value in request.session['cart'].items():
+        order_detail = OrderDetail.objects.create(order_id=order.id,
+                                                  product_id=value["id"],
+                                                  quantity=value["quantity"],
+                                                  price=value["price"])
+    del request.session['cart']
     return redirect(checkout_session.url, code=303)
+
+
+def my_order(request):
+    orders = Order.objects.filter(user_id=request.user.id)
+    return render(request, 'myorder.html', {'orders': orders})
+
+
+def order_detail(request, order_id):
+    order_detail = OrderDetail.objects.filter(order_id=order_id)
+    query = OrderDetail.objects.filter(order_id=order_id).select_related('product')
+    products = []
+    total_price = 0
+    for product in query:
+        products.append({
+            'id': product.product.id,
+            'name': product.product.name,
+            'image': product.product.image,
+            'quantity': product.quantity,
+        })
+        total_price += product.product.price * product.quantity
+
+    return render(request, 'orderdetail.html',
+                  {'order_detail': order_detail,
+                   'products': products,
+                   'total_price': total_price},
+                  )
+
+

@@ -20,7 +20,7 @@ def initProduct():
         )
         price = stripe.Price.create(
             product=product,
-            unit_amount=int(p.price),
+            unit_amount=int(p.price) * 100,
             currency='usd'
         )
 

@@ -62,6 +62,7 @@ class OrderDetail(models.Model):
     product = models.ForeignKey(Product, related_name='order_detail', on_delete=models.DO_NOTHING)
     order = models.ForeignKey(Order, related_name='order_detail', on_delete=models.DO_NOTHING)
 
+
 class ProductVariant(models.Model):
     product = models.ForeignKey(Product, related_name='variant', on_delete=models.CASCADE)
     color = models.ForeignKey(Color, related_name='variant', on_delete=models.CASCADE)

@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h5 class="text-center my-3">Order Detail</h5>
+        <div class="row">
+            {% for p in products %}
+            <div class="col-12">
+                <div class="card mb-3 ">
+                    <div class="row g-0 justify-content-center px-5">
+                        <div class="col-md-4 p-3 d-flex justify-content-center">
+                            <img src=" {% static '' %}{{ p.image }}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8 d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">ID: {{ p.id }}</h5>
+                            <p class="card-text">Product: {{ p.name }}</p>
+                            <p class="card-text">Quantity: {{ p.quantity}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <h3 class="my-3">Total Price: {{ total_price }}$</h3>
+        </div>
+
+    </div>
+
+{% endblock %}
