@@ -14,5 +14,7 @@ urlpatterns = [
     path('add-to-cart', template_context.add_To_Cart, name='add_To_Cart'),
     path('checkout/', views.checkOutWithStripe, name='checkout'),
     path('delete-from-cart', template_context.delete_from_cart, name='delete-from-cart'),
-    path('reduce-from-cart', template_context.reduce_From_Cart, name='reduce-from-cart')
+    path('reduce-from-cart', template_context.reduce_From_Cart, name='reduce-from-cart'),
+    path('myorder', views.my_order, name='my_order'),
+    path('myorder/<int:order_id>/', views.order_detail, name='order_detail')
 ]

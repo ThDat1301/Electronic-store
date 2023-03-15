@@ -14,27 +14,27 @@
                 <form method="post" class="form-signup">
                     {% csrf_token %}
                     <div class="form-floating my-3">
-                        <input type="text" class="form-control" id="floatingInputFN" placeholder="First name" name="firstname">
+                        <input type="text" class="form-control" id="floatingInputFN" placeholder="First name" name="firstname" required>
                         <label for="floatingInputFN">First Name</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="text" class="form-control" id="floatingInputLN" placeholder="Last name" name="lastname">
+                        <input type="text" class="form-control" id="floatingInputLN" placeholder="Last name" name="lastname" required>
                         <label for="floatingInputFN">Last Name</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="text" class="form-control" id="floatingInputUN" placeholder="User name" name="username">
+                        <input type="text" class="form-control" id="floatingInputUN" placeholder="User name" name="username" required>
                         <label for="floatingInputUN">User Name</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="email" class="form-control" id="floatingInputE" placeholder="Email" name="email">
+                        <input type="email" class="form-control" id="floatingInputE" placeholder="Email" name="email" required>
                         <label for="floatingInputE">Email</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="password" class="form-control" id="floatingInputP" placeholder="Password" name="password">
+                        <input type="password" class="form-control" id="floatingInputP" placeholder="Password" name="password" required>
                         <label for="floatingInputP">Password</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="password" class="form-control" id="floatingInputRP" placeholder="Re Password" name="repassword">
+                        <input type="password" class="form-control" id="floatingInputRP" placeholder="Re Password" name="repassword" required>
                         <label for="floatingInputRP">Confirm Password</label>
                     </div>
                     <div class="form-floating mb-3 d-flex justify-content-center">
