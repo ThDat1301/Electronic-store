@@ -3,6 +3,7 @@ from urllib import request
 
 from MySQLdb.times import Date
 from django.contrib.auth import authenticate, login as login_process, logout as logout_process
+from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
@@ -94,8 +95,9 @@ def logout(request):
 def filter_product(request):
     minPrice=request.GET['minPrice']
     maxPrice=request.GET['maxPrice']
-
+    cate_id = request.GET['cat']
     products = Product.objects.all()
+    products = products.filter(category_id=cate_id).order_by("-id")
     products = products.filter(price__gte=minPrice)
     products = products.filter(price__lte=maxPrice)
 
@@ -103,6 +105,7 @@ def filter_product(request):
     return JsonResponse({'data': t})
 
 
+@login_required
 def checkOutWithStripe(request):
     YOUR_DOMAIN = 'http://127.0.0.1:8000/'
     data = []
@@ -152,11 +155,13 @@ def checkOutWithStripe(request):
     return redirect(checkout_session.url, code=303)
 
 
+@login_required
 def my_order(request):
     orders = Order.objects.filter(user_id=request.user.id)
     return render(request, 'myorder.html', {'orders': orders})
 
 
+@login_required
 def order_detail(request, order_id):
     order_detail = OrderDetail.objects.filter(order_id=order_id)
     query = OrderDetail.objects.filter(order_id=order_id).select_related('product')

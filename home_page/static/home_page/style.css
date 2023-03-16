@@ -660,10 +660,6 @@ button {
     cursor: pointer;
 }
 
-input, select, button {
-    height: 36px;
-}
-
 input, select {
     border: 1px solid #e8e9eb;
     background-color: white;
@@ -957,7 +953,7 @@ p.product-single__price {
     }
 
 .product-description{
-    font-size: 5px;
+    font-size: 16px;
 }
 
     .product-single__photo .lightbox {

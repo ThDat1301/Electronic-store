@@ -1,5 +1,6 @@
 {% extends 'layout/base.html' %}
 {% load static %}
+{% block title %}Product Detail{% endblock %}
 
 {% block content %}
     <div class="breadcrumbWrap">
@@ -141,8 +142,10 @@
                                         <div class="product-form__item--submit">
                                             <button type="submit" name="add" id="addToCartBtn"
                                                     class="btn product-form__cart-submit product-form__cart-submit--small addToCartBtn"
+                                                    data-id="{{ product.id }}"
                                                     data-title="{{ product.name }}" data-price="{{ product.price }}"
                                                     data-image="{{ product.image }}">
+                                                <span id="AddToCartText-product-template">
                                                 <span id="AddToCartText-product-template">
                                               <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
                                           </span>

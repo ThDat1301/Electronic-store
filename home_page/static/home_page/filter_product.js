@@ -5,6 +5,8 @@ $(document).ready(function() {
         var maxPrice = $("#maxPrice").val();
         filterArr.minPrice = minPrice;
         filterArr.maxPrice = maxPrice;
+         var cate_id = $("#cat").data('id');
+        filterArr.cat = cate_id;
 
         $.ajax({
             url:'/filter_product',

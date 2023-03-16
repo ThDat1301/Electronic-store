@@ -15,6 +15,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
@@ -46,6 +47,7 @@ class Order(models.Model):
     orderAddress = models.CharField(max_length=200)
     products = models.ManyToManyField(Product, related_name='order', through='OrderDetail')
     user = models.ForeignKey(User, related_name='order', on_delete=models.CASCADE)
+
 
 class OrderDetail(models.Model):
     price = models.FloatField()

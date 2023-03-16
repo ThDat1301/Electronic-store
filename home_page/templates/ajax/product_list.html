@@ -1,7 +1,10 @@
 {% for p in product %}
+{% load static %}
+
 <div class="product-item bg-white overflow-hidden">
-    <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{{ p.image }}" alt={{ p.name
-                     }}></a>
+    <a href="#">
+        <img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static '' %}{{ p.image }}" alt="{{ p.name}}" />
+    </a>
     <div class="btn-set d-flex flex-column">
         <a class="icon d-flex mb-1 border-0"><i class="fa-regular fa-heart icon-heart"></i></a>
 
@@ -24,4 +27,6 @@
 
     </div>
 </div>
+<script src="{% static 'home_page/cart.js' %}"></script>
+
 {% endfor %}

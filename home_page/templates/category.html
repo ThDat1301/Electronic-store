@@ -1,5 +1,6 @@
 {% extends 'layout/base.html' %}
 {% load static %}
+{% block title %}Category{% endblock %}
 
 {% block content %}
 
@@ -50,19 +51,6 @@
 <!--                                    </li>-->
 
 <!--                                </ul>-->
-                            </div>
-                        </div>
-
-                        <div class="sidebar_widget border mb-3">
-                            <div class="widget-title">FILTER BY COLOR</div>
-                            <div class="widget-content">
-                                <ul class="p-0 d-flex">
-                                    {% for c in colors %}
-                                    <li class="p-1 m-2 border" style="width: 25px; height: 25px; background-color:{{c.color_code}};">
-                                        <input class="filter-checkbox" type="checkbox" data-filter="color" value="{{c.id}}">
-                                    </li>
-                                    {% endfor %}
-                                </ul>
                             </div>
                         </div>
 
@@ -132,13 +120,13 @@
 
                 <div class="col-8">
                     <header class="product-header mb-3">
-                        <h1>{{ category.name }}</h1>
+                        <h1 id="cat" data-id="{{ category.id }}">{{ category.name }}</h1>
                         <div class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rerum aperiam corporis minima quod. Hic, voluptas? Laudantium sed ex blanditiis ipsam necessitatibus molestiae illo deleniti, dolor voluptatibus tempore molestias aliquid.</div>
                     </header>
                     <div class="productList d-flex flex-wrap" id="productList">
                         {% for p in product %}
                         <div class="product-item bg-white overflow-hidden d-flex flex-column" href="/product/{{p.id}}">
-                            <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static ''%}{{ p.image }}" alt={{ p.name }}></a>
+                            <a href="#"><img class="card-img-top product-img p-3" data-image="{{ p.image }}" src="{% static ''%}{{ p.image }}" alt="{{ p.name }}"></a>
                             <div class="btn-set d-flex flex-column">
                                 <a class="icon d-flex mb-1 border-0"><i class="fa-regular fa-heart icon-heart"></i></a>
 
